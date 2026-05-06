@@ -31,15 +31,20 @@ npm run preview  # preview du build
   - **% de la fortune** (barre de progression : or → sang).
   - **Risk Ratio** : `(20 % de la fortune) / coût du set` = nombre de morts avant d'atteindre le seuil de gear fear.
   - Alerte rouge si un set dépasse 20 % de la fortune.
+  - **Checklist avant départ** (monture, bouffe, potions, capes — extensible) cochable au clic, avec compteur `n/total` et badge "Prêt à sortir" quand tout est coché.
 
-### 3. PvP — Journal de Combat
-- Stats agrégées : Kills / Deaths / Assists / K/D / Fame totale / Loot net.
-- Journal d'engagements (kill, mort, assist) avec cible, fame, loot, zone, date.
+### 3. Progression — Fame Tracker
+- **Chronomètre** Start / Stop / Reset persistant (timestamp-based, survit aux refresh).
+- Saisie de la **fame** gagnée + étiquette de session (zone farmée).
+- Calcul automatique de la **Fame / heure** en temps réel.
+- Bouton "Sauver session" → historique avec stats cumulées (temps total, fame totale, fame/h moyenne, meilleure session).
 
-### 4. Tâches Journalières
-- Checklist groupée par catégorie (PvE, PvP, Récolte, etc.).
-- Reset automatique chaque jour (heure locale) ou manuel.
-- Ajout / suppression de tâches personnalisées.
+### 4. Gestion d'Île — Minuteurs
+- **Presets rapides** (Carottes 22h, Choux 36h, Citrouilles 96h, Vache, Mouton, Bois, Fleur…).
+- Création de minuteur personnalisé (nom + heures + minutes + icône).
+- Barre de progression dorée en temps réel, date/heure de fin lisible.
+- Pulse doré + badge "Prêts à récolter" quand un minuteur arrive à terme.
+- Redémarrer / supprimer en un clic.
 
 ## Stockage
 
@@ -51,6 +56,7 @@ Toutes les clés sont préfixées `albion-dashboard:` dans le LocalStorage :
 | `app.fortune`                 | Fortune totale (silver)              |
 | `economy.refining`            | Champs du calculateur d'affinage     |
 | `economy.flips`               | Liste des flips Marché Noir          |
-| `arsenal.loadouts`            | Liste des loadouts                   |
-| `pvp.entries`                 | Journal de combats                   |
-| `quests.tasks` / `quests.done`| Tâches & complétions du jour         |
+| `arsenal.loadouts`            | Loadouts + checklist par loadout     |
+| `progression.chrono`          | Chrono de session courante           |
+| `progression.sessions`        | Historique des sessions sauvegardées |
+| `island.timers`               | Minuteurs d'île (timestamp-based)    |

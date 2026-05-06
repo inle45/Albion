@@ -1,10 +1,10 @@
-import { Coins, Shield, Swords, ScrollText, Crown } from 'lucide-react'
+import { Coins, Shield, TrendingUp, House, Crown } from 'lucide-react'
 
 const NAV = [
-  { id: 'economie', label: 'Économie',  icon: Coins,      hint: 'Affinage & Marché Noir' },
-  { id: 'arsenal',  label: 'Arsenal',   icon: Shield,     hint: 'Gear Fear & Loadouts' },
-  { id: 'pvp',      label: 'PvP',       icon: Swords,     hint: 'Kills, Deaths & Fame' },
-  { id: 'quetes',   label: 'Tâches',    icon: ScrollText, hint: 'Journalières' },
+  { id: 'economie',    label: 'Économie',    icon: Coins,      hint: 'Affinage & Marché Noir' },
+  { id: 'arsenal',     label: 'Arsenal',     icon: Shield,     hint: 'Gear Fear & Loadouts' },
+  { id: 'progression', label: 'Progression', icon: TrendingUp, hint: 'Fame Tracker & Sessions' },
+  { id: 'ile',         label: 'Île',         icon: House,      hint: 'Minuteurs & Récoltes' },
 ]
 
 export default function Sidebar({ current, onChange }) {
