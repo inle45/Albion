@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(230,184,74,.06), transparent 60%),
+      radial-gradient(900px 500px at 110% 110%, rgba(212,48,43,.05), transparent 60%),
+      #0b0d10;
+    color: #f4f1e8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .font-display { font-family: 'Cinzel', Georgia, serif; letter-spacing: .02em; }
+  ::selection { background: rgba(230,184,74,.35); color: #fff; }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-800/80 border border-bg-600 rounded-2xl p-5 backdrop-blur-sm;
+  }
+  .card-title {
+    @apply font-display text-lg text-gold-400 tracking-wide;
+  }
+  .label {
+    @apply block text-xs uppercase tracking-widest text-ink-300 mb-1;
+  }
+  .input {
+    @apply w-full bg-bg-900/70 border border-bg-600 rounded-lg px-3 py-2 text-ink-100 placeholder:text-ink-400
+           focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500/40 transition;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-3 py-2 rounded-lg border transition font-medium text-sm;
+  }
+  .btn-gold {
+    @apply btn bg-gold-600/15 border-gold-600/40 text-gold-400 hover:bg-gold-600/25 hover:border-gold-500;
+  }
+  .btn-blood {
+    @apply btn bg-blood-600/15 border-blood-600/40 text-blood-400 hover:bg-blood-600/25 hover:border-blood-500;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent border-bg-600 text-ink-200 hover:bg-bg-700 hover:text-ink-100;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1 text-[11px] uppercase tracking-wider px-2 py-0.5 rounded-full border;
+  }
+  .table-row {
+    @apply grid items-center gap-2 px-3 py-2 rounded-lg border border-transparent hover:border-bg-600 hover:bg-bg-700/40 transition;
+  }
+  .stat {
+    @apply flex flex-col gap-1 p-4 rounded-xl bg-bg-700/60 border border-bg-600;
+  }
+  .stat-label { @apply text-[11px] uppercase tracking-widest text-ink-300; }
+  .stat-value { @apply font-display text-2xl text-ink-100; }
+}
+
+/* Subtle scrollbar */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #242932; border-radius: 999px; }
+*::-webkit-scrollbar-thumb:hover { background: #2f3540; }
